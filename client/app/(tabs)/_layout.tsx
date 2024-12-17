@@ -1,4 +1,4 @@
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
@@ -14,6 +14,16 @@ import GradientHeader from '@/components/GrdientHeader';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+ const user = null
+
+
+
+  if (!user) { 
+    return<Redirect href='/auth/signin'/>
+  }
+
+
+
 
   return (
     <Tabs
